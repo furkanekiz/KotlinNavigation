@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/frFirst">
+
+    <fragment
+        android:id="@+id/frFirst"
+        android:name="com.furkanekiz.kotlinnavigation.FRFirst"
+        android:label="fr_first"
+        tools:layout="@layout/fr_first" >
+        <action
+            android:id="@+id/action_frFirst_to_frSecond"
+            app:destination="@id/frSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/frSecond"
+        android:name="com.furkanekiz.kotlinnavigation.FRSecond"
+        android:label="fr_second"
+        tools:layout="@layout/fr_second" >
+        <action
+            android:id="@+id/action_frSecond_to_frFirst"
+            app:destination="@id/frFirst" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue='furkan' />
+    </fragment>
+</navigation>
